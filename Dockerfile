@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
@@ -31,6 +31,6 @@ RUN apk add --no-cache \
     rm -rf /var/cache/apk/* /tmp/* && \
 
 # Set file permissions
-    chmod +x /docker-entrypoint.sh
+    chmod +x /docker-entrypoint.sh /opt/tvhproxy/tvhProxy.py
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
